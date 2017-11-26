@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comments extends Model
-{
-    //
+class Comments extends Model {
+
+    public function film() {
+        return $this->belongsTo('App\Films');
+    }
 }
