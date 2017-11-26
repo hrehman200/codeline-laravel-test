@@ -39,16 +39,3 @@
     </div>
 </div>
 @endsection
-
-
-<script type="text/javascript">
-    jQuery(function() {
-        jQuery.ajax({
-            type: "GET",
-            url: "/films/get",
-            success: function (response) {
-                console.log(response);
-            }
-        });
-    });
-</script>

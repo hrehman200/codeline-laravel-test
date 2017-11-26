@@ -41,14 +41,18 @@ class FilmController extends Controller {
 
         $validator = Validator::make($request->all(), $this->rules);
         if ($validator->fails()) {
-            return Redirect::route('films.create')->withErrors($validator)->withInput();
+            //return Redirect::route('films.create')->withErrors($validator)->withInput();
         }
 
         $input = Input::all();
 
-        Input::file('photo')->move(__DIR__.'/storage/public/films',Input::file('photo')->getClientOriginalName());
+        $path = $request->file('photo')->store(
+            'films', 'public'
+        );
 
-        var_dump($input);
+        $input['slug'] = str_slug($input['name']);
+        $input['photo'] = basename($path);
+
         Films::create( $input );
 
         return Redirect::route('films.index')->with('message', 'Film created');

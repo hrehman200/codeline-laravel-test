@@ -29,5 +29,5 @@ Route::get('films/store', 'FilmController@store');
 Route::bind('films', function($value, $route) {
     return App\Films::where('slug', $value)->first();
 });
-Route::get('films', 'FilmController@index');
+Route::get('films', 'FilmController@index')->name('films.index');
 

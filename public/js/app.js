@@ -42836,7 +42836,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fetchFilms: function fetchFilms() {
             var _this = this;
 
-            axios.get('api/films').then(function (res) {
+            axios.get('/api/films').then(function (res) {
                 _this.list = res.data;
             });
         }

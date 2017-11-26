@@ -32,7 +32,7 @@
 
         methods: {
             fetchFilms() {
-                axios.get('api/films').then((res) => {
+                axios.get('/api/films').then((res) => {
                     this.list = res.data;
                 });
             }

@@ -13,6 +13,13 @@
                 </div>
 
                 <div class="panel-body">
+
+                    @if (Session::has('message'))
+                        <div class="flash alert alert-info">
+                            <p>{{ Session::get('message') }}</p>
+                        </div>
+                    @endif
+
                     <film-list></film-list>
                 </div>
 
